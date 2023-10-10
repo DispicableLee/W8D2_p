@@ -15,4 +15,17 @@ Array.prototype.bubbleSort = function() {
     return this
 }
 
-console.log([1,3,5,1,2].bubbleSort())
+// console.log([1,3,5,1,2].bubbleSort())
+
+
+String.prototype.subStrings = function(){
+    let holder = [];
+    for(let i = 0; i<this.length; i++){
+        for(let j = i+1; j<=this.length; j++){
+            holder.push(this.slice(i,j));
+        }
+    }
+    return holder;
+}
+
+console.log("hello".subStrings())

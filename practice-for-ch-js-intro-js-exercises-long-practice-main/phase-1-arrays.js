@@ -80,7 +80,8 @@ Array.prototype.myReduce = function(callBack, optionalValue){
     let acc = 0
     if(optionalValue===undefined){
         acc = this[0];
-        this.splice(1).myEach(function(ele, i, arr){ acc = callBack(acc, ele)})
+        this.slice(1).myEach(function(ele, i, arr){ acc = callBack(acc, ele)})
+        console.log(this)
     }else{
         acc = optionalValue;
         this.myEach(function(ele, i, arr){ acc = callBack(acc, ele)})
@@ -94,4 +95,3 @@ console.log([1,2,3].myReduce(accumulate))
 function accumulate(acc, el){
     return acc + el;
 }
-
