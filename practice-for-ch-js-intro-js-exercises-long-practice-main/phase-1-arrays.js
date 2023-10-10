@@ -62,7 +62,7 @@ Array.prototype.myEach = function(callBack){
     }
 }
 
-console.log([1,2,3,4].myEach(say))
+// console.log([1,2,3,4].myEach(say))
 
 function plusOne(e){
     return e+1
@@ -74,5 +74,15 @@ Array.prototype.myMap = function(callBack){
 }
 
 
-console.log([1,2,3,4,5].myMap(plusOne))
+// console.log([1,2,3,4,5].myMap(plusOne))
+
+Array.prototype.myReduce = function(callBack, optionalValue){
+    if(optionalValue===undefined) optionalValue = this[0]
+    console.log(optionalValue)
+    return optionalValue
+
+
+}
+
+console.log([1,2,3].myReduce(function(acc, el) {return acc + el}))
 
