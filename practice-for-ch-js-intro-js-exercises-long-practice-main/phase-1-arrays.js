@@ -62,18 +62,17 @@ Array.prototype.myEach = function(callBack){
     }
 }
 
-// console.log([1,2,3,4].myEach(say))
+console.log([1,2,3,4].myEach(say))
 
 function plusOne(e){
     return e+1
 }
-
 Array.prototype.myMap = function(callBack){
-
-    this.myEach(callBack)
-
-
+    let holder = [];
+    this.myEach(function(ele, i, arr) {holder.push(callBack(ele))});
+    return holder;
 }
 
 
 console.log([1,2,3,4,5].myMap(plusOne))
+
