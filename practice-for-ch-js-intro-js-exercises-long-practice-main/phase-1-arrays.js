@@ -57,9 +57,9 @@ function say(a){
 
 
 Array.prototype.myEach = function(callBack){
-    this.forEach(callBack)
-
-
+    for(let i = 0; i<this.length; i++){
+        callBack(this[i])
+    }
 }
 
 // console.log([1,2,3,4].myEach(say))
@@ -69,7 +69,8 @@ function plusOne(e){
 }
 
 Array.prototype.myMap = function(callBack){
-    return this.myEach((e))
+
+    this.myEach(callBack)
 
 
 }
