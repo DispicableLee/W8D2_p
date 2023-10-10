@@ -39,11 +39,6 @@ Array.prototype.twoSum = function(){
 Array.prototype.transpose = function(){
     const holder = new Array;
     for(let row = 0; row < this.length; row++) {
-        // let j = row;
-        // let temp = [];
-        // temp.push(this[row][j]);
-        // holder.push(temp);
-        // j++;
         let temp = [];
         for(let column = 0; column < this[row].length; column++) {
             temp.push(this[column][row]);
@@ -53,4 +48,31 @@ Array.prototype.transpose = function(){
     return holder;
 }
 
-console.log([[0, 1, 2], [3, 4, 5], [6, 7, 8]].transpose())
+// console.log([[0, 1, 2], [3, 4, 5], [6, 7, 8]].transpose())
+
+function say(a){
+    console.log(a)
+}
+
+
+
+Array.prototype.myEach = function(callBack){
+    this.forEach(callBack)
+
+
+}
+
+// console.log([1,2,3,4].myEach(say))
+
+function plusOne(e){
+    return e+1
+}
+
+Array.prototype.myMap = function(callBack){
+    return this.myEach((e))
+
+
+}
+
+
+console.log([1,2,3,4,5].myMap(plusOne))
