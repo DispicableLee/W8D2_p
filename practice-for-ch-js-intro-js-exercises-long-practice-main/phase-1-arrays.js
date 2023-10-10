@@ -77,12 +77,21 @@ Array.prototype.myMap = function(callBack){
 // console.log([1,2,3,4,5].myMap(plusOne))
 
 Array.prototype.myReduce = function(callBack, optionalValue){
-    if(optionalValue===undefined) optionalValue = this[0]
-    console.log(optionalValue)
-    return optionalValue
-
-
+    let acc = 0
+    if(optionalValue===undefined){
+        acc = this[0];
+        this.splice(1).myEach(function(ele, i, arr){ acc = callBack(acc, ele)})
+    }else{
+        acc = optionalValue;
+        this.myEach(function(ele, i, arr){ acc = callBack(acc, ele)})
+    }
+    return acc
+   
 }
 
-console.log([1,2,3].myReduce(function(acc, el) {return acc + el}))
+console.log([1,2,3].myReduce(accumulate))
+
+function accumulate(acc, el){
+    return acc + el;
+}
 
